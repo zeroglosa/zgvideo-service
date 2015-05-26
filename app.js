@@ -24,11 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
 
-vidStreamer = vidStreamer.settings(config);
-
-app.use('/videos', vidStreamer);
+app.use('/', vidStreamer.settings(config));
 
 //catch 404 and forward to error handler
 app.use(function (req, res, next) {
