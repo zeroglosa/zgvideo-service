@@ -1,4 +1,3 @@
-require('dotenv').load();
 var ENV = process.env;
 
 var settings = {
